@@ -1,5 +1,7 @@
 /*
   Determine if a string has all unique characters.
+  Time: O(n)
+  Space: O(n)
 */
 
 function isUnique(inputStr) {
