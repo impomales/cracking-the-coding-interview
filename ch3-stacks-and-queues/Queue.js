@@ -1,20 +1,48 @@
 function Queue() {
   this.head = null;
   this.tail = null;
-};
+}
 
 function Node(value, node) {
   this.value = value;
   this.next = node;
 }
 
-Queue.prototype.enqueue = function() {};
+Queue.prototype.enqueue = function(value) {
+  const newNode = new Node(value);
 
-Queue.prototype.dequeue = function() {};
+  if (!this.head) {
+    this.head = newNode;
+    this.tail = newNode;
+  } else {
+    this.tail.next = newNode;
+    this.tail = newNode;
+  }
+};
 
-Queue.prototype.peek = function() {};
+Queue.prototype.dequeue = function() {
+  if (!this.head) throw Error('queue is currently empty.');
 
-Queue.prototype.isEmpty = function() {};
+  const dequeued = this.head;
+
+  if (this.head === this.tail) {
+    this.head = null;
+    this.tail = null;
+  } else {
+    this.head = this.head.next;
+  }
+
+  return dequeued.value;
+};
+
+Queue.prototype.peek = function() {
+  if (!this.head) throw Error('queue is currently empty.');
+  return this.head.value;
+};
+
+Queue.prototype.isEmpty = function() {
+  return !this.head;
+};
 
 Queue.prototype.toString = function() {
   let curr = this.head;
@@ -25,6 +53,6 @@ Queue.prototype.toString = function() {
   }
   result += 'end';
   return result;
-}
+};
 
 module.exports = Queue;
