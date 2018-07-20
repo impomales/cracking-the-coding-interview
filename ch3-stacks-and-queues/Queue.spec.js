@@ -54,14 +54,26 @@ describe.only('Queue', () => {
   });
 
   describe('peek method', () => {
-    it('can see the value at the head', () => {});
+    it('can see the value at the head', () => {
+      expect(queue.peek()).to.equal(4);
+    });
 
-    it('does not mutate the queue', () => {});
+    it('does not mutate the queue', () => {
+      expect(queue.toString()).to.equal('4 => 5 => 6 => end');
+    });
   });
 
   describe('isEmpty method', () => {
-    it('returns false when queue is not empty', () => {});
+    it('returns false when queue is not empty', () => {
+      expect(queue.isEmpty()).to.equal(false);
+    });
 
-    it('returns true if queue is empty', () => {});
+    it('returns true if queue is empty', () => {
+      queue.dequeue();
+      queue.dequeue();
+      queue.dequeue();
+
+      expect(queue.isEmpty()).to.equal(true);
+    });
   });
 });
