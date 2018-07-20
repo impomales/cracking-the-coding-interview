@@ -30,7 +30,7 @@ describe.only('Queue', () => {
     });
 
     it('handles dequeueing on an empty queue', () => {
-      expect(queue.dequeue()).to.throw('queue is currently empty.');
+      expect(queue.dequeue).to.throw('queue is currently empty.');
     });
 
     it('handles multiple equeue/dequeues appropriately', () => {
