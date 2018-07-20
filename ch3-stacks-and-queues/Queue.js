@@ -16,4 +16,15 @@ Queue.prototype.peek = function() {};
 
 Queue.prototype.isEmpty = function() {};
 
+Queue.prototype.toString = function() {
+  let curr = this.head;
+  let result = '';
+  while (curr) {
+    result += curr.value + ' => ';
+    curr = curr.next;
+  }
+  result += 'end';
+  return result;
+}
+
 module.exports = Queue;
