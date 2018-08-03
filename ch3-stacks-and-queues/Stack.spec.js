@@ -17,5 +17,16 @@ describe('Stack', () => {
 
       expect(stack.toString()).to.equal('c => b => a => end');
     });
+
+    it('can remove from the stack', () => {
+      removed = stack.pop();
+      expect(removed).to.equal('c');
+
+      removed = stack.pop();
+      expect(removed).to.equal('b');
+
+      removed = stack.pop();
+      expect(removed).to.equal('a');
+    });
   });
 });
