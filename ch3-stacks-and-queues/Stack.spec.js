@@ -74,6 +74,6 @@ describe('Stack', () => {
       stack.pop();
 
       expect(stack.isEmpty()).to.equal(true);
-    };
+    });
   });
 });
