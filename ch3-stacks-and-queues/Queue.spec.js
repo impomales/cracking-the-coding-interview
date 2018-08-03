@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const Queue = require('./Queue');
 
-describe.only('Queue', () => {
+describe('Queue', () => {
   let queue;
   let removed;
 
