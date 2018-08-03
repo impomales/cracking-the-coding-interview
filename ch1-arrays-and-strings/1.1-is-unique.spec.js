@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const isUnique = require('./1.1-is-unique');
 
-describe('isUnique function', () => {
+describe('1.1 isUnique function', () => {
   let result;
 
   it('returns true string with all unique characters', () => {

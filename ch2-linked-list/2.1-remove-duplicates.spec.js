@@ -2,7 +2,7 @@ const { expect } = require('chai');
 const LinkedList = require('./LinkedList');
 const removeDuplicates = require('./2.1-remove-duplicates');
 
-describe('removeDuplicates function', () => {
+describe('2.1 removeDuplicates function', () => {
   let linkedList;
   before(() => {
     linkedList = new LinkedList();
