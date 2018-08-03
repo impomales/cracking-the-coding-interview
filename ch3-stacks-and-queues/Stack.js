@@ -13,11 +13,23 @@ Stack.prototype.push = function(value) {
   this.top = newNode;
 };
 
-Stack.prototype.pop = function() {};
+Stack.prototype.pop = function() {
+  if (!this.top) throw Error('stack is currently empty.');
 
-Stack.prototype.peek = function() {};
+  const popped = this.top;
+  this.top = this.top.next;
 
-Stack.prototype.isEmpty = function() {};
+  return popped.value;
+};
+
+Stack.prototype.peek = function() {
+  if (!this.top) throw Error('stack is currently empty.');
+  return this.top.value;
+};
+
+Stack.prototype.isEmpty = function() {
+  return !this.top;
+};
 
 Stack.prototype.toString = function() {
   let curr = this.top;
