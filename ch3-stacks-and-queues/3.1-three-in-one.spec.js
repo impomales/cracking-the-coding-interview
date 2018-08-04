@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const ThreeInOne = require('3.1-three-in-one');
+const ThreeInOne = require('./3.1-three-in-one');
 
 describe('3.1 ThreeInOne', () => {
   let threeInOne;
@@ -27,6 +27,35 @@ describe('3.1 ThreeInOne', () => {
       expect(threeInOne.toString(0)).to.equal('c => b => a => end');
       expect(threeInOne.toString(1)).to.equal('f => e => d => end');
       expect(threeInOne.toString(2)).to.equal('i => h => g => end');
+    });
+
+    it('can remove from each stack', () => {
+      removed = threeInOne.pop(0);
+      expect(removed).to.equal('c');
+
+      removed = threeInOne.pop(0);
+      expect(removed).to.equal('b');
+
+      removed = threeInOne.pop(0);
+      expect(removed).to.equal('a');
+
+      removed = threeInOne.pop(1);
+      expect(removed).to.equal('f');
+
+      removed = threeInOne.pop(1);
+      expect(removed).to.equal('e');
+
+      removed = threeInOne.pop(1);
+      expect(removed).to.equal('d');
+
+      removed = threeInOne.pop(2);
+      expect(removed).to.equal('i');
+
+      removed = threeInOne.pop(2);
+      expect(removed).to.equal('h');
+
+      removed = threeInOne.pop(2);
+      expect(removed).to.equal('g');
     });
   });
 });
