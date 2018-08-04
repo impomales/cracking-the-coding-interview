@@ -57,5 +57,23 @@ describe('3.1 ThreeInOne', () => {
       removed = threeInOne.pop(2);
       expect(removed).to.equal('g');
     });
+
+    it('handles popping on an empty stack', () => {
+      expect(threeInOne.pop).to.throw('stack is currently empty.');
+    });
+
+    it('handles multiple push/pop appropiately', () => {
+      for (let i = 0; i < 3; i++) {
+        threeInOne.push(i, 1);
+        expect(threeInOne.pop(i)).to.equal(1);
+        threeInOne.push(i, 2);
+        threeInOne.push(i, 3);
+        expect(threeInOne.pop(i)).to.equal(3);
+        threeInOne.push(i, 4);
+        threeInOne.push(i, 5);
+        threeInOne.push(i, 6);
+        expect(threeInOne.pop(i)).to.equal(6);
+      }
+    });
   });
 });
