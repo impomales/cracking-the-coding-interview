@@ -102,9 +102,9 @@ describe('3.1 ThreeInOne', () => {
 
     it('returns true if stack is empty', () => {
       for (let i = 0; i < 3; i++) {
-        threeInOne(i).pop();
-        threeInOne(i).pop();
-        threeInOne(i).pop();
+        threeInOne.pop(i);
+        threeInOne.pop(i);
+        threeInOne.pop(i);
 
         expect(threeInOne.isEmpty(i)).to.equal(true);
       }
