@@ -73,6 +73,40 @@ describe('3.1 ThreeInOne', () => {
         threeInOne.push(i, 5);
         threeInOne.push(i, 6);
         expect(threeInOne.pop(i)).to.equal(6);
+        expect(threeInOne.toString(i)).to.equal('5 => 4 => 2 => end');
+      }
+
+    });
+  });
+
+  describe('peek method', () => {
+    it('can see the value at the top', () => {
+      for (let i = 0; i < 3; i++) {
+        expect(threeInOne.peek(i)).to.equal(5);
+      }
+    });
+
+    it('does not mutate the stack', () => {
+      for (let i = 0; i < 3; i++) {
+        expect(threeInOne.toString(i)).to.equal('5 => 4 => 3 => 2 => end');
+      }
+    });
+  });
+
+  describe('isEmpty method', () => {
+    it('returns false when stack is not empty', () => {
+      for (let i = 0; i < 3; i++) {
+        expect(threeInOne.isEmpty(i)).to.equal(false);
+      }
+    });
+
+    it('returns true if stack is empty', () => {
+      for (let i = 0; i < 3; i++) {
+        threeInOne(i).pop();
+        threeInOne(i).pop();
+        threeInOne(i).pop();
+
+        expect(threeInOne.isEmpty(i)).to.equal(true);
       }
     });
   });
