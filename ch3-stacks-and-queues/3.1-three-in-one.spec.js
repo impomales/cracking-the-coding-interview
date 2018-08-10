@@ -1,12 +1,12 @@
 const { expect } = require('chai');
 const ThreeInOne = require('./3.1-three-in-one');
 
-describe('3.1 ThreeInOne', () => {
+describe.only('3.1 ThreeInOne', () => {
   let threeInOne;
   let removed;
 
   before(() => {
-    threeInOne = new ThreeInOne();
+    threeInOne = new ThreeInOne(12);
   });
 
   describe('push and pop method', () => {
@@ -59,7 +59,8 @@ describe('3.1 ThreeInOne', () => {
     });
 
     it('handles popping on an empty stack', () => {
-      expect(threeInOne.pop).to.throw('stack is currently empty.');
+      const popEmpty = threeInOne.pop.bind(threeInOne, 0);
+      expect(popEmpty).to.throw('stack is currently empty.');
     });
 
     it('handles multiple push/pop appropiately', () => {
@@ -88,7 +89,7 @@ describe('3.1 ThreeInOne', () => {
 
     it('does not mutate the stack', () => {
       for (let i = 0; i < 3; i++) {
-        expect(threeInOne.toString(i)).to.equal('5 => 4 => 3 => 2 => end');
+        expect(threeInOne.toString(i)).to.equal('5 => 4 => 2 => end');
       }
     });
   });

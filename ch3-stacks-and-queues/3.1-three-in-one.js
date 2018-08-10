@@ -7,18 +7,30 @@ function ThreeInOne(size) {
 
 ThreeInOne.prototype.push = function(stackNum, value) {
   if (this.lengths[stackNum] === this.stackLength)
-    throw new Error('stack is currently full.');
+    throw Error('stack is currently full.');
 
   this.tops[stackNum]++;
   this.lengths[stackNum]++;
   this.stacks[this.tops[stackNum]] = value;
 };
 
-ThreeInOne.prototype.pop = function(stackNum) {};
+ThreeInOne.prototype.pop = function(stackNum) {
+  if (this.lengths[stackNum] === 0) throw Error('stack is currently empty.');
 
-ThreeInOne.prototype.peek = function(stackNum) {};
+  const removed = this.stacks[this.tops[stackNum]];
+  this.tops[stackNum]--;
+  this.lengths[stackNum]--;
+  return removed;
+};
 
-ThreeInOne.prototype.isEmpty = function(stackNum) {};
+ThreeInOne.prototype.peek = function(stackNum) {
+  if (this.lengths[stackNum] === 0) throw Error('stack is currently empty.');
+  return this.stacks[this.tops[stackNum]];
+};
+
+ThreeInOne.prototype.isEmpty = function(stackNum) {
+  return !this.lengths[stackNum];
+};
 
 ThreeInOne.prototype.toString = function(stackNum) {
   let res = '',
