@@ -6,6 +6,9 @@
   "scripts": {
     "test": "mocha **/*.spec.js"
   },
+  "repository": {
+    "url": "https://github.com/impomales/cracking-the-coding-interview.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

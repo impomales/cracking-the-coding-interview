@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const ThreeInOne = require('./3.1-three-in-one');
 
-describe.only('3.1 ThreeInOne', () => {
+describe('3.1 ThreeInOne', () => {
   let threeInOne;
   let removed;
 
