@@ -41,6 +41,7 @@ describe('4.2 routeBetweenNodes function', () => {
       a: ['b'],
       b: ['c', 'd'],
       c: ['d'],
+      d: [],
       f: ['g'],
       g: ['f']
     }
