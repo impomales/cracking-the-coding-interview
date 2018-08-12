@@ -1,7 +1,7 @@
 const { expect } = require('chai');
-const isRoute = require('./4.2-route-between-nodes');
+const routeBetweenNodes = require('./4.2-route-between-nodes');
 
-describe('isRoute method', () => {
+describe('4.2 routeBetweenNodes function', () => {
   describe('directed graph', () => {
     const graph = {
       a: ['b'],
@@ -11,11 +11,11 @@ describe('isRoute method', () => {
     };
 
     it('returns true if there is a path', () => {
-      expect(isRoute(graph, 'a', 'c')).to.equal(true);
+      expect(routeBetweenNodes(graph, 'a', 'c')).to.equal(true);
     });
 
     it('returns false if there is no path', () => {
-      expect(isRoute(graph, 'd', 'a')).to.equal(false);
+      expect(routeBetweenNodes(graph, 'd', 'a')).to.equal(false);
     });
   });
 
@@ -28,11 +28,11 @@ describe('isRoute method', () => {
     };
 
     it('returns true if there is a path', () => {
-      expect(isRoute(graph, 'a', 'd')).to.equal(true);
+      expect(routeBetweenNodes(graph, 'a', 'd')).to.equal(true);
     });
 
     it('returns false if there is no path', () => {
-      expect(isRoute(graph, 'b', 'a')).to.equal(false);
+      expect(routeBetweenNodes(graph, 'b', 'a')).to.equal(false);
     });
   });
 
@@ -46,11 +46,11 @@ describe('isRoute method', () => {
     }
 
     it('returns true if there is a path', () => {
-      expect(isRoute(graph, 'f', 'g')).to.equal(true);
+      expect(routeBetweenNodes(graph, 'f', 'g')).to.equal(true);
     });
 
     it('returns false if there is no path', () => {
-      expect(isRoute(graph, 'a', 'f')).to.equal(false);
+      expect(routeBetweenNodes(graph, 'a', 'f')).to.equal(false);
     });
   });
 });
