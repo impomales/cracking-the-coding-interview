@@ -7,3 +7,5 @@
 - [chapter 2: Linked Lists](https://github.com/impomales/cracking-the-coding-interview/tree/master/ch2-linked-list)
 
 - [chapter 3: Stacks and Queues](https://github.com/impomales/cracking-the-coding-interview/tree/master/ch3-stacks-and-queues)
+
+- [chapter 4: Trees and Graphs](https://github.com/impomales/cracking-the-coding-interview/tree/master/ch4-trees-and-graphs)
