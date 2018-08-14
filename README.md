@@ -9,3 +9,5 @@
 - [chapter 3: Stacks and Queues](https://github.com/impomales/cracking-the-coding-interview/tree/master/ch3-stacks-and-queues)
 
 - [chapter 4: Trees and Graphs](https://github.com/impomales/cracking-the-coding-interview/tree/master/ch4-trees-and-graphs)
+
+- [chapter 5: Bit Manipulation](https://github.com/impomales/cracking-the-coding-interview/tree/master/ch5-bit-manipulation)
